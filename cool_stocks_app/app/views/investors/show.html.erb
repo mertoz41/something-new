@@ -1,2 +1,13 @@
-<h1>Investors#show</h1>
-<p>Find me in app/views/investors/show.html.erb</p>
+<h1>Investor</h1>
+
+<h3>Name: <%= @investor.name%></h3>
+
+<h4>Company: <%=@investor.company%></h4>
+
+
+<%= link_to 'Edit an investor', edit_investor_path(@investor) %><br><br>
+<%= link_to 'Back to Investors Index', investors_path %>
+
+<%= form_tag investor_path(@investor), method: "DELETE" do %>
+    <%= submit_tag "DELETE the investor"%>
+<% end %>

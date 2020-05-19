@@ -23,8 +23,8 @@ class StocksController < ApplicationController
   end
 
   def update
-    stock = Stock.update(stocks_params)
-    redirect_to stock_path(stock)
+    @stock.update(stocks_params)
+    redirect_to stock_path(@stock)
   end
 
   def destroy
