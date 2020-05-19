@@ -1,0 +1,12 @@
+<h1><%=@stock.name%></h1>
+<h3><%=@stock.price%></h3>
+<h4><%=@stock.description%></h4><br>
+
+<%= link_to "Edit Stock", edit_stock_path %><br>
+<%= link_to "Stocks Homepage", stocks_path %>
+
+<%= form_tag stock_path(@stock), method: "delete" do %>
+    <%= submit_tag "Delete Stock" %>
+<% end %>
+
+

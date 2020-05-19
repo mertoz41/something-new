@@ -1,0 +1,9 @@
+<h1>Stocks Homepage</h1>
+<ul>
+    <% @stocks.each do |stock| %> 
+        <li><%= link_to stock.name, stock_path(stock) %></li>
+    <% end %> 
+</ul>
+
+<%= link_to "Create a stock", new_stock_path %>
+
