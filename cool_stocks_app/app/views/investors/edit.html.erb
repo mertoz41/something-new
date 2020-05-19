@@ -1,12 +1,6 @@
 <h1>Edit an investor</h1>
 
-<%= form_for (@investor) do |f| %>
-    <%=f.label :name %>
-    <%=f.text_field :name %>
-    <%=f.label :company %>
-    <%=f.select :company, ["3M", "MACQUARIE", "NWM"] %>
-    <%=f.submit %>
-    <% end %>
+<%= render partial: "investor_form" %>
 
 
 

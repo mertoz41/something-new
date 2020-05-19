@@ -6,7 +6,8 @@ class InvestorsController < ApplicationController
     @investors = Investor.all
   end
 
-  def show   
+  def show 
+    
   end
 
   def new
@@ -34,7 +35,8 @@ class InvestorsController < ApplicationController
   private 
 
   def investor_params
-    params.require(:investor).permit(:name, :company)
+    params.require(:investor).permit(:name, :company,
+    portfolio_attributes: [:stock_id])
   end
 
   def find_investor 

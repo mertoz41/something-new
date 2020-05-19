@@ -1,0 +1,16 @@
+
+<%= form_for (@investor) do |f| %>
+    <%=f.label :name %>
+    <%=f.text_field :name %>
+    <%=f.label :company %>
+    <%=f.collection_select :company, Investor.all, :name, :company %>
+    <br>
+    <h4>Add Stocks to Your Portfolio</h4>
+    <%=f.fields_for :portfolio do |s| %>
+      <div>
+                <%= s.label :stock_id%>
+                <%= s.collection_select :stock_id, Stock.all, :id, :name, {prompt: "Choose a Stock"}  %>
+            </div>
+        <% end %>
+    <%= f.submit %>
+<% end %>

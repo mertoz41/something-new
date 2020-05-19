@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   # get 'stocks/edit'
   # get 'stocks/update'
   # get 'stocks/destroy'
+  get "/", to: "application#homepage", as: "index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
   resources :stocks, :investors, :portfolios
 
 end

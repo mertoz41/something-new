@@ -3,8 +3,12 @@
 <h3>Name: <%= @investor.name%></h3>
 
 <h4>Company: <%=@investor.company%></h4>
-
-
+<ul>
+   <%@investor.stocks.each do |stock| %>
+<h4>All Stocks:</h4> <li><%= link_to stock.name, stock_path(stock)%></li>
+<%end%>
+</ul>
+<br>
 <%= link_to 'Edit an investor', edit_investor_path(@investor) %><br><br>
 <%= link_to 'Back to Investors Index', investors_path %>
 
