@@ -23,6 +23,9 @@ class InvestorsController < ApplicationController
   end
 
   def update
+    stock = Stock.find(params[:investor][:portfolio][:stock_id])
+    @investor.stocks << stock
+    
     @investor.update(investor_params)
     redirect_to investor_path(@investor)
   end
@@ -35,8 +38,7 @@ class InvestorsController < ApplicationController
   private 
 
   def investor_params
-    params.require(:investor).permit(:name, :company,
-    portfolio_attributes: [:stock_id])
+    params.require(:investor).permit(:name, :company)
   end
 
   def find_investor 
